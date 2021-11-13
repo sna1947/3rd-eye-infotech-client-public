@@ -1,34 +1,34 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-import { bgcolor, Box } from '@mui/system';
+import {  Box } from '@mui/system';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Product = (props) => {
-    const {img, name, price, warranty,description, _id } = props.product;
+    const {img, productName, price, warranty,description, _id } = props.product;
     console.log(props)
 
 
     return (
 
-        <Box sx={{bgcolor:'gray'}}>
-            <Card sx={{ maxWidth: 245, m: 3, }}>
+        <Box sx={{bgcolor:'#ECEBD2'}}>
+            <Card sx={{ maxWidth: 260, m: 1, }}>
                 <CardMedia
-                    sx={{ width: 250,justifyContent: 'center' }}
+                    sx={{ width: 250, mt:1,p:1 }}
                     component="img"
                     alt="green iguana"
-                    height="180"
+                    height="230"
                     image={img}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        name: {name}
+                    <Typography gutterBottom variant="h6" component="div">
+                        Name: {productName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        price: {price}
+                        Price: {price}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        warranty: {warranty}
+                        Warranty: {warranty}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         Description: {description.slice(0, 100)}
@@ -41,7 +41,7 @@ const Product = (props) => {
             </Card>
         </Box>
 
-
+    
 
     );
 };

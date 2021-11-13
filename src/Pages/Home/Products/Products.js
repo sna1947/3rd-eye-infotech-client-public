@@ -15,9 +15,10 @@ const Products = () => {
        
             
         <Box sx={{ display: 'flex',flexDirection: 'row',flexWrap: 'wrap',justifyContent: 'center', p: 1, m: 1, bgcolor: 'background.paper' }}>
-     
+                
      
             {
+                  
                 products.map(product => <Product
                     key={product._id}
                     product={product}

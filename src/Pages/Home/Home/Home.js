@@ -4,6 +4,8 @@ import Products from '../Products/Products';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Banner from '../Banner/Banner';
+import Footer from '../../Shared/Footer/Footer';
+import NewArrival from './NewArrival/NewArrival';
 
 const Home = () => {
     return (
@@ -13,7 +15,9 @@ const Home = () => {
             <Banner></Banner>
             <Grid item xs={10} sm={10} md={10}>
                 <Products></Products>
+                
             </Grid>
+
 
             <Grid item xs={2} sm={2} md={2}>
                 <Box
@@ -35,7 +39,8 @@ const Home = () => {
                     </div>
                 </Box>
             </Grid>
-            
+            <NewArrival></NewArrival>
+            <Footer></Footer>
         </Grid>
     );
 };
