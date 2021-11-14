@@ -15,6 +15,9 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Purchases from './Pages/Home/Purchases/Purchases';
 import CommingSoon from './Pages/Home/CommingSoon/CommingSoon';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
+import HomeProducts from './Pages/Home/HomeProducts/HomeProducts';
+import HomeProduct from './Pages/Home/Home/HomeProduct/HomeProduct';
+
 
 initializeAuthencation();
 
@@ -47,6 +50,15 @@ function App() {
                <ProductDetails></ProductDetails>
           </PrivateRoute> */}
 
+          <PrivateRoute path='/buynow'>
+             <BuyNow></BuyNow>
+          </PrivateRoute>
+          <PrivateRoute path='/homeproducts'>
+             <HomeProducts></HomeProducts>
+          </PrivateRoute>
+          <PrivateRoute path='/homeproduct'>
+            <HomeProduct></HomeProduct>
+          </PrivateRoute>
           <PrivateRoute path='/buynow'>
              <BuyNow></BuyNow>
           </PrivateRoute>

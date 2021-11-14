@@ -22,6 +22,9 @@ import DashBoardHome from '../DashBoardHome/DashBoardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Review from '../Review/Review';
+// import AllOrder from '../AllOrder/AllOrder';
+// import MyOrder from '../DashBoardHome/MyOrder/MyOrder';
 
 const drawerWidth = 200;
 
@@ -54,7 +57,10 @@ console.log(admin);
 
       <br/>
 
+
       <Link to= {`${url}/myorder`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">My Order</Button></Link><br/>
+
+
 
       <Link to= {`${url}/review`} style={{textDecoration:'none',color:'red', }}><Button color="inherit">Review</Button></Link><br/>
 
@@ -140,13 +146,20 @@ console.log(admin);
         <Route exact path={path}>
           <DashBoardHome></DashBoardHome>
         </Route>
-        <AdminRoute path={`${path}/:makeAdmin`}>
+       
+        
+        <AdminRoute exact path={`${path}/:makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
+
+        <Route exact path={`${path}/:review`}>
+          <Review></Review>
+        </Route>
         
-        {/* <Route path={`${path}/:myorder`}>
+        {/* <Route  path={`${path}/:myorder`}>
           <MyOrder></MyOrder>
         </Route> */}
+
       </Switch>
       
       

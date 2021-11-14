@@ -1,43 +1,47 @@
-import { Grid } from '@mui/material';
-import React from 'react';
+import { Divider, Grid } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import Products from '../Products/Products';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Banner from '../Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import NewArrival from './NewArrival/NewArrival';
+import HomeProducts from '../HomeProducts/HomeProducts';
 
 const Home = () => {
+const [reviews, setReviews] = useState([]);
+
+useEffect(()=>{
+fetch('http://localhost:5000/reviews')
+.then(res => res.json())
+.then(data => setReviews(data))
+
+},[])
+
+
     return (
        
         <Grid container spacing={2} >
             
             <Banner></Banner>
-            <Grid item xs={10} sm={10} md={10}>
+            <Grid item xs={9} sm={9} md={9}>
                 <Products></Products>
+                {/* <HomeProducts></HomeProducts> */}
                 
             </Grid>
 
 
             <Grid item xs={2} sm={2} md={2}>
-                <Box
-                    component="form"
-                    sx={{
-                        '& .MuiTextField-root': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                >
-                    <div>
-                       
-                        <TextField
-                            // label="Size"
-                            id="standard-size-normal"
-                            defaultValue="Normal"
-                            variant="standard"
-                        />
-                    </div>
-                </Box>
+                
+
+                <h4> Users All Reviews: {reviews.length}</h4>
+                <Divider/>
+                <ul>
+                    {
+                        reviews.map(review=><li>{review.review}</li>)
+                    }
+                </ul>
+
             </Grid>
             <NewArrival></NewArrival>
             <Footer></Footer>

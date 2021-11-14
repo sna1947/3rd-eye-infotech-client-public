@@ -23,8 +23,8 @@ const NewArrival = () => {
 <h1>New Arrival</h1>
 
             <Divider />
-            
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Container sx={{m:2}}>
+            <Grid  sx={{ml:3}} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
                 <Grid item xs={4}>
                 <Card sx={{ maxWidth: 345 }}>
@@ -91,7 +91,7 @@ const NewArrival = () => {
 
 
 
-                {/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}> */}
+            
 
                 <Grid item xs={4}>
                 <Card sx={{ maxWidth: 345 }}>
@@ -153,7 +153,8 @@ const NewArrival = () => {
                 </Card>
                 </Grid>
 
-                </Grid> */}
+                </Grid> 
+                </Container>
             
         </div>
             
