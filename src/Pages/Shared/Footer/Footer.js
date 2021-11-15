@@ -3,11 +3,12 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { Button, Divider, TextField, Typography } from '@mui/material';
+import { bgcolor } from '@mui/system';
 
 const Footer = () => {
     return (
-        <Box sx={{ flexGrow: 1, bgcolor: 'info.main',color:'white',p:3,border: 1 , borderColor: 'grey.500' }}>
+        <Box sx={{ flexGrow: 1, bgcolor: '#424242',color:'white',p:3,border: 1 , borderColor: 'grey.500' }}>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
                     <Typography variant="h6" component="h2">
@@ -16,7 +17,7 @@ const Footer = () => {
                         CCTV Camera World is an established CCTV equipment distributor in the USA with shipping locations nationwide. We test every product we sell to make sure it is worthy of our name, as we stand behind all the products we sell.
 
                         {/* Our experts take pride in the work we do and the products we sell. We always welcome customer questions, so feel free to contact us. We are open Monday through Friday, 10AM - 5PM EST. */}
-                    </Typography>;
+                    </Typography>
                 </Grid>
 
                 <Grid item xs={3}>
@@ -27,7 +28,15 @@ const Footer = () => {
                         Subscribe to our Google+ page
                         Subscribe to our YouTube channel
                         Interesting Reads
-                    </Typography>;
+                    </Typography>
+        <TextField
+       sx={{bgcolor:'#1565c0', borderRadius: 1, color:'white'}}
+       hiddenLabel
+        id="filled-hidden-label-small"
+        defaultValue="enter your Email"
+        variant="filled"
+        size="small"
+      /><Button sx={{m:1}} variant="contained">Contained</Button>
                 </Grid>
 
                 <Grid item xs={3}>
@@ -41,7 +50,7 @@ const Footer = () => {
                         IP Camera Help
                         Port Forwarding Guides
                         Become a Dealer
-                    </Typography>;
+                    </Typography>
                 </Grid>
 
                 <Grid item xs={3}>
@@ -55,9 +64,11 @@ const Footer = () => {
                         CCTVCameraWorld Blog <br/>
 
                         <i class="fab fa-youtube"></i> CCTV Camera Videos
-                    </Typography>;
+                    </Typography>
                 </Grid>
             </Grid>
+            <Divider/>
+            <p >Copyright © All reserved</p>
         </Box>
     );
 };

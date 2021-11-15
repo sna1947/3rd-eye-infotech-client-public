@@ -1,4 +1,4 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../../Hooks/useAuth';
 
@@ -45,8 +45,8 @@ const MyOrder = () => {
           <TableCell align="right">{row.email}</TableCell>
           <TableCell align="right">{row.Address}</TableCell>
           <TableCell align="right">{row.Phone}</TableCell>
-          <TableCell align="right">{row.Aprove}</TableCell>
-          <TableCell align="right">{row.Delete}</TableCell>
+          <TableCell align="right"><Button>Update</Button></TableCell>
+          <TableCell align="right"><Button>Delete</Button></TableCell>
         </TableRow>
       ))}
     </TableBody>

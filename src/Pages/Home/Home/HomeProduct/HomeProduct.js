@@ -4,7 +4,7 @@
 // import { Link } from 'react-router-dom';
 
 // const HomeProduct = (props) => {
-//     const {img, productName, price, warranty,description, _id} = props.HomeProduct
+//     const {img, productName, price, warranty,description, _id} = props.homeproduct;
 //     return (
 //         <Box sx={{bgcolor:'#ECEBD2'}}>
 //             <Card sx={{ maxWidth: 260, m: 1, }}>

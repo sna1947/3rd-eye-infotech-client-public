@@ -7,13 +7,25 @@ const ManageOrder = () => {
     const [manageorder, setManageOrder] = useState([]);
 
     useEffect(()=>{
-    //   const url = `https://mighty-island-81125.herokuapp.com/orders?email=${user.email}`;
-    //   console.log(url)
 
     fetch('https://mighty-island-81125.herokuapp.com/orders')
     .then(res => res.json())
     .then(data => setManageOrder(data))
-    },[])
+    },[]);
+
+    // const handleDeleteOrders = id =>{
+    //   const url = `https://mighty-island-81125.herokuapp.com/orders/${id}`
+    //   fetch(url,{
+    //     method:'DELETE',
+    //   })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     if(data.deletedCount > 0){
+    //       alert('deleted success')
+    //     }
+    //   })
+
+    // }
     
     return (
         <div>
@@ -46,6 +58,7 @@ const ManageOrder = () => {
               <TableCell align="right">{row.Phone}</TableCell>
               <TableCell align="right"><Button>Aprove</Button></TableCell>
               <TableCell align="right"><Button>Delete</Button></TableCell>
+              {/* <TableCell align="right"><Button onClick = {()=> handleDeleteOrders(manageorder._id) }>Delete</Button></TableCell> */}
             </TableRow>
           ))}
         </TableBody>

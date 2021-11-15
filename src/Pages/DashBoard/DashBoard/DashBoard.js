@@ -34,7 +34,7 @@ const drawerWidth = 200;
 function DashBoard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {admin} = useAuth();
+  const {admin, user, logOut} = useAuth();
 console.log(admin);
 
   let { path, url } = useRouteMatch();
@@ -50,7 +50,7 @@ console.log(admin);
 
       <Link to='/home'style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Home</Button></Link> <br/>
 
-      <Link to={`${url}`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Dash Board Home</Button></Link><br/>
+      {/* <Link to={`${url}`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Dash Board Home</Button></Link><br/> */}
 
       {admin && <Box>
         <Link to= {`${url}/makeAdmin`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Make Admin</Button></Link><br/>
@@ -70,6 +70,19 @@ console.log(admin);
       <Link to= {`${url}/addproduct`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Add Product</Button></Link><br/>
 
       
+
+      {
+            user?.email? 
+            <Box>
+              
+              
+               <Button style={{textDecoration:'none',color:'red'}} onClick={logOut}  color="inherit">Logout</Button>
+            </Box>
+           
+              : 
+              
+            <Link to='/login'style={{textDecoration:'none',color:'red'}} ><Button  color="inherit">Login</Button></Link>
+          }
 
       {/* <Link to= {`${url}/manageproduct`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Manage product</Button></Link> */}
       <List>
@@ -146,9 +159,9 @@ console.log(admin);
         <Toolbar />
        
         <Switch>
-        <Route exact path={path}>
+        {/* <Route exact path={path}>
           <DashBoardHome></DashBoardHome>
-        </Route>
+        </Route> */}
        
         
         <AdminRoute  path={`${path}/makeAdmin`}>
