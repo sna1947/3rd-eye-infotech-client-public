@@ -7,7 +7,7 @@
 //     const [homeproducts, setHomeProducts] = useState([]);
 
 //     useEffect(()=>{
-//         fetch('http://localhost:5000/products')
+//         fetch('https://mighty-island-81125.herokuapp.com/products')
 //         .then(res => res.json())
 //         .then(data => setHomeProducts(data))
 //     },[])

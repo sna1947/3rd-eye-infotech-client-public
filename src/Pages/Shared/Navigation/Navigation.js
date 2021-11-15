@@ -37,16 +37,19 @@ const Navigation = () => {
           {
             user?.email? 
             <Box>
+              
               <Link to='/dashboard'style={{textDecoration:'none',color:'white'}} ><Button  color="inherit">Dash Board</Button></Link>
               
                <Button style={{textDecoration:'none',color:'white'}} onClick={logOut}  color="inherit">Logout</Button>
             </Box>
            
               : 
+              
             <Link to='/login'style={{textDecoration:'none',color:'white'}} ><Button  color="inherit">Login</Button></Link>
           }
           
-         
+          <p>{user.displayName}</p>
+          <p>{user.displayimage}</p>
           
           
         </Toolbar>

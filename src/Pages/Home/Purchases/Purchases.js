@@ -23,7 +23,7 @@ const Purchases = () => {
         alert('submited')
 
         //OrderData send to Server=====================
-        fetch('http://localhost:5000/orders', {
+        fetch('https://mighty-island-81125.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(orders)

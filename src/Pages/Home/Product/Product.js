@@ -1,4 +1,5 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { Star } from '@mui/icons-material';
+import { Button, Card, CardActions, CardContent, CardMedia, Rating, Typography } from '@mui/material';
 import {  Box } from '@mui/system';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -37,6 +38,15 @@ const Product = (props) => {
                 <CardActions>
                 </CardActions>
                 {/* <Link to='/productsdetails' <Button size="small">Learn More</Button> </Link> */}
+
+                {/* reting==================== */}
+                <Rating 
+                initialRating={Star}
+                emptySymbol= 'far fa-star '
+                fullSymbol='fas fa-star'
+                readOnly
+                ></Rating> <br/>
+
                 <Link to = {`/product/${_id}`} style={{textDecoration:'none',color:'white'}} ><Button  sx={{bgcolor:'#ffeb3b', m:1}}>Learn More</Button></Link>
             </Card>
         </Box>

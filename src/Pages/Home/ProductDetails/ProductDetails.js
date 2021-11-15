@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const { productid } = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productid}`
+        const url = `https://mighty-island-81125.herokuapp.com/products/${productid}`
         console.log(url)
         fetch(url)
             .then(res => res.json())

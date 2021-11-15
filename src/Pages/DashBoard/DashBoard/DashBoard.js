@@ -23,6 +23,9 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Review from '../Review/Review';
+import MyOrder from '../DashBoardHome/MyOrder/MyOrder';
+import AddProduct from './AddProduct/AddProduct';
+import ManageOrder from './ManageOrder/ManageOrder';
 // import AllOrder from '../AllOrder/AllOrder';
 // import MyOrder from '../DashBoardHome/MyOrder/MyOrder';
 
@@ -68,7 +71,7 @@ console.log(admin);
 
       
 
-      <Link to= {`${url}/manageproduct`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Manage product</Button></Link>
+      {/* <Link to= {`${url}/manageproduct`} style={{textDecoration:'none',color:'red', }}><Button  color="inherit">Manage product</Button></Link> */}
       <List>
 
       
@@ -148,17 +151,23 @@ console.log(admin);
         </Route>
        
         
-        <AdminRoute exact path={`${path}/:makeAdmin`}>
+        <AdminRoute  path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
 
-        <Route exact path={`${path}/:review`}>
+        <Route  path={`${path}/manageorder`}>
+          <ManageOrder></ManageOrder>
+        </Route>
+        <Route  path={`${path}/review`}>
           <Review></Review>
         </Route>
         
-        {/* <Route  path={`${path}/:myorder`}>
+        <Route  path={`${path}/myorder`}>
           <MyOrder></MyOrder>
-        </Route> */}
+        </Route>
+        <Route  path={`${path}/addproduct`}>
+          <AddProduct></AddProduct>
+        </Route>
 
       </Switch>
       

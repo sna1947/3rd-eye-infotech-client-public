@@ -14,7 +14,7 @@ const reviewCommantRef =useRef();
 
         const newUser = {name, email, review};
 
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://mighty-island-81125.herokuapp.com/reviews',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify(newUser)

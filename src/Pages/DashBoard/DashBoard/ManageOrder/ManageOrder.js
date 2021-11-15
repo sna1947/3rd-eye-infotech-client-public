@@ -1,28 +1,23 @@
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../Hooks/useAuth';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import useAuth from '../../../../Hooks/useAuth';
 
-const AllOrder = () => {
+const ManageOrder = () => {
     const {user} = useAuth();
-    const [allorder, setAllOrder] = useState([]);
+    const [manageorder, setManageOrder] = useState([]);
 
     useEffect(()=>{
-      const url = `https://mighty-island-81125.herokuapp.com/orders?email=${user.email}`;
-      console.log(url)
-    fetch(url)
-    .then(res => res.json())
-    .then(data => setAllOrder(data))
-    },[])
+    //   const url = `https://mighty-island-81125.herokuapp.com/orders?email=${user.email}`;
+    //   console.log(url)
 
+    fetch('https://mighty-island-81125.herokuapp.com/orders')
+    .then(res => res.json())
+    .then(data => setManageOrder(data))
+    },[])
+    
     return (
         <div>
-            <h2>All Order: {allorder.length}</h2>
+            <h2>Manage Order: {manageorder.length}</h2>
 
             <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -37,7 +32,7 @@ const AllOrder = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {allorder.map((row) => (
+          {manageorder.map((row) => (
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -49,8 +44,8 @@ const AllOrder = () => {
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">{row.Address}</TableCell>
               <TableCell align="right">{row.Phone}</TableCell>
-              <TableCell align="right">{row.Aprove}</TableCell>
-              <TableCell align="right">{row.Delete}</TableCell>
+              <TableCell align="right"><Button>Aprove</Button></TableCell>
+              <TableCell align="right"><Button>Delete</Button></TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -60,4 +55,4 @@ const AllOrder = () => {
     );
 };
 
-export default AllOrder;
+export default ManageOrder;
